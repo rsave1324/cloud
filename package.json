@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/ungureanuramona1324/cloud#readme",
   "dependencies": {
+    "detect-gender": "^1.0.0",
     "express": "^4.17.1",
+    "gender-api.com-client": "^1.0.14",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   }

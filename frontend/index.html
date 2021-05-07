@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body translate="no" >
+  <div id="app" :class="[result.gender == 'male' ? 'app--male' : '' , result.gender == 'female' ? 'app--female' : '' , result.gender == 'null' ? 'app--null' : '' ]">
+    <span class="result__progress-bar" :style=`width:${result.probability*100}%`></span>
+    
+    <div class="result">
+      <h2 class="result__name">{{result.name}}</h2>
+      <h3 class="result__gender">Gender : {{result.gender}}</h3>
+      <div class="result__probability">
+        <h2 class="result__probability-title">Probability : {{result.probability*100}}% </h2>
+      </div>
+    </div>
+    
+    <div :class="['search' , isNull ? 'search--error' : '']">
+      <input class="search__input" type="text" v-model="name" @keyup.enter="search()" placeholder="Name" />
+      
+      <span class="info">Press enter key</span>
+    </div>
+ 
+  </div>
+  
+  <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.2/vue-resource.min.js'></script>    
+  <script id="rendered-js" src="js/main.js" type="module"></script>
+</body>
+
+</html>
+ 
